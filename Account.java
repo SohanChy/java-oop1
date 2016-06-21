@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Account{
 	private String accName,accId;
-	private double accBalance;
+	protected double accBalance;
 	
 	//Transaction stuff
 	private List<Transaction> listOfTransaction = new ArrayList<Transaction>();
@@ -11,6 +11,10 @@ public class Account{
 	Account(){
 		accName = accId = "N/A";
 		accBalance = 0;
+	}
+	
+	public double getAccBalance(){
+		return accBalance;
 	}
 	
 	public String getAccName(){
@@ -27,7 +31,7 @@ public class Account{
 		this.accBalance = accBalance;
 	}
 
-	boolean deposit(double amount){
+	public boolean deposit(double amount){
 		if(amount > 0){
 			accBalance = accBalance + amount;
 			return true;
@@ -35,7 +39,7 @@ public class Account{
 		else return false;
 	}
 
-	boolean withdraw(double amount){
+	public boolean withdraw(double amount){
 		if(amount > 0 && amount <= accBalance){
 			accBalance = accBalance - amount;
 			return true;
@@ -43,7 +47,7 @@ public class Account{
 		else return false;
 	}
 	
-		public boolean transfer(Account toAcc, double ammount){
+	public boolean transfer(Account toAcc, double ammount){
 		
 		if(this.withdraw(ammount)){
 			if(toAcc.deposit(ammount)){
@@ -156,3 +160,4 @@ public class Account{
 	}
 
 }
+
