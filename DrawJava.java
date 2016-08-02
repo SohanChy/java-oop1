@@ -13,6 +13,7 @@ class WindowSensor extends WindowAdapter{
 class MyFrame extends Frame
 {	
 	private String msg;
+	private int potakaUrX = 200, potakaUrY = 200;
 	
 	public MyFrame(){
 		super("Drawing in Java!!");
@@ -42,9 +43,34 @@ class MyFrame extends Frame
 		g.setColor(Color.BLACK);
 		g.drawRect(99,119,201,101);
 		
+		
 		//Flag Green BG
 		g.setColor(Color.GREEN);
 		g.fillRect(100,120,200,100);
+		
+		
+		/*
+		//Polygon flag
+		//Pole Upper Thing
+		Polygon flag = new Polygon();
+		int m = 100;
+		int n = 120;
+		
+		flag.addPoint(m , n);
+		flag.addPoint(m,  n + 100);
+		flag.addPoint(m+potakaUrX,  n + 100);
+		flag.addPoint(m + potakaUrY,  n);
+		*/
+
+		
+		/*
+		flag.addPoint(m , n);
+		flag.addPoint(m+200,  n + 50);
+		*/
+		//g.setColor(Color.GREEN);
+		//g.fillPolygon(flag);
+		
+		
 		
 		//Flag red Sun
 		g.setColor(Color.RED);		
@@ -56,7 +82,6 @@ class MyFrame extends Frame
 		
 		
 		//Pole Upper Thing
-		
 		Polygon p = new Polygon();
 		int x = 90;
 		int y = 120;
@@ -69,7 +94,7 @@ class MyFrame extends Frame
 
 		//Text
 		g.setColor(Color.RED);
-		g.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 35));
 		g.drawString("National Flag",170,367);
 		
 		
@@ -94,7 +119,11 @@ class ButtonSensor implements ActionListener{
 		c++;
 		fm.setMessage("Button Pressed: "+c);
 		
+		
 		fm.repaint();
+		
+		
+		
 		System.out.println(c);
 	}
 	
