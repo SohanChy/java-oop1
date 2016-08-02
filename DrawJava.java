@@ -15,7 +15,7 @@ class MyFrame extends Frame
 	private String msg;
 	
 	public MyFrame(){
-			super("Drawing in Java!!");
+		super("Drawing in Java!!");
 		
 		Button b = new Button("Ok");
 		
@@ -64,13 +64,19 @@ class MyFrame extends Frame
 		p.addPoint(x + 10, y);
 		p.addPoint(x - 10,  y);
 		p.addPoint(x,  y - 10);
-		g.setColor(Color.RED);
+		g.setColor(Color.darkGray);
 		g.fillPolygon(p);
+
+		//Text
+		g.setColor(Color.RED);
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+		g.drawString("National Flag",170,367);
 		
 		
 		//Text
+		g.setFont(new Font("TrebuchetMS", Font.PLAIN, 14));
 		g.setColor(Color.BLACK);
-		g.drawString(msg,20,40);
+		g.drawString(msg,20,60);
 	}
 	
 }
@@ -90,7 +96,6 @@ class ButtonSensor implements ActionListener{
 		
 		fm.repaint();
 		System.out.println(c);
-
 	}
 	
 }
